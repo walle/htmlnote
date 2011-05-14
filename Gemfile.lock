@@ -148,7 +148,6 @@ DEPENDENCIES
   libnotify
   rails (= 3.1.0.beta1)
   rb-inotify
-  rspec
   rspec-rails
   ruby-debug19
   sass

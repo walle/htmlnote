@@ -1,6 +1,8 @@
 require File.expand_path('../boot', __FILE__)
 
-require 'rails/all'
+require "action_controller/railtie"
+require "action_mailer/railtie"
+require "active_resource/railtie"
 
 # If you have a Gemfile, require the gems listed there, including any gems
 # you've limited to :test, :development, or :production.
@@ -43,9 +45,6 @@ module Htmlnote
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
-
-    # Enable IdentityMap for Active Record, to disable set to false or remove the line below.
-    config.active_record.identity_map = true
 
     # Enable the asset pipeline
     config.assets.enabled = true
