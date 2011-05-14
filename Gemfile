@@ -26,6 +26,7 @@ end
 group :test do
   gem 'guard'
   gem 'guard-rspec'
+  gem 'guard-livereload'
   
   if RUBY_PLATFORM =~ /linux/i
     gem 'rb-inotify'
