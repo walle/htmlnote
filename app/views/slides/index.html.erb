@@ -1,3 +1,7 @@
 <div id="slides">
-
+  <% @slides.each do |slide| %>
+    <div id="slide-<%= slide.id %>">
+      <%= slide.contents %>
+    </div>
+  <% end %>
 </div>
