@@ -21,15 +21,20 @@ class SlideShow
     if @currentSlide == @numberOfSlides
       return
 
-    @currentSlide++
-    @updateHash()
-    @animate()
+    @move()
 
   previous: ->
     if @currentSlide == @firstPosition
       return
+    
+    @move(false)
 
-    @currentSlide--
+  move: (right = true) ->
+    if @slides.is(':animated')
+      return
+
+    if right then @currentSlide++ else @currentSlide--
+    
     @updateHash()
     @animate()
 
@@ -37,11 +42,8 @@ class SlideShow
     location.hash = '#slide-' + @currentSlide
 
   animate: ->
-    if @slides.is(':animated')
-      return
+    @slides.animate({scrollLeft: (@currentSlide-1) * @slideWidth})
 
-    @slides.animate({scrollLeft: (@currentSlide-1) * @slideWidth}, 1500)
-
-$( ->
+$(window).load( ->
   slideShow = new SlideShow()
 )

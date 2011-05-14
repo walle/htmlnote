@@ -16,10 +16,12 @@ body
   background: linear-gradient(left, $background_color $start_gradient,$light_gradient $start_light,$background_color $end_gradient);
 }
 
+$slideWidth:  1180px;
+
 #container
 {
   margin: auto;
-  width: 1180px;
+  width: $slideWidth;
   overflow: auto;
 }
 
@@ -30,7 +32,7 @@ body
   > div 
     {
     height: 600px;
-    width: 1180px;
+    width: $slideWidth;
     float: left;
     margin-right: 200px;
     text-align: center;
