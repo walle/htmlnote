@@ -20,7 +20,7 @@ body
 {
   margin: auto;
   width: 1180px;
-  overflow: hidden;
+  overflow: auto;
 }
 
 #slides 
@@ -34,17 +34,6 @@ body
     float: left;
     margin-right: 200px;
     text-align: center;
-
-    /* Flexible Box Model */
-    display: -webkit-box;
-    -webkit-box-align: center;
-    -webkit-box-orient: horizontal;
-    -webkit-box-pack: center;
-
-    display: box;
-    box-align: center;
-    box-orient: horizontal;
-    box-pack: center;
 
     h2 
     {
