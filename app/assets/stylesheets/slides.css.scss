@@ -30,12 +30,15 @@ $slideWidth:  1180px;
 	width: 999999px;
  
   > div 
-    {
+  {
     height: 600px;
     width: $slideWidth;
     float: left;
     margin-right: 200px;
     text-align: center;
+    background: #fff;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
 
     h2 
     {

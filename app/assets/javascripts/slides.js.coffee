@@ -1,6 +1,8 @@
 class SlideShow
   constructor: ->
-    $('#container').css('overflow', 'hidden')
+    container = $('#container')
+    container.css('overflow', 'hidden')
+    container.css('margin-top', ($(window).height() - container.height()) / 2)
     @slides = $("#slides")
     slides = @slides.children('div')
     @numberOfSlides = slides.length
