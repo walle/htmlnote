@@ -1,5 +1,17 @@
-/* 
-  Place all the styles related to the matching controller here.
-  They will automatically be included in application.css.
-  You can use Sass (SCSS) here: http://sass-lang.com/
-*/
+$background_color: #828282;
+$light_gradient: #dddddd;
+$start_gradient: 0%;
+$start_light: 48%;
+$end_gradient: 100%;
+
+body
+{
+  background: $background_color;
+  background: -moz-linear-gradient(left, $background_color $start_gradient, $light_gradient $start_light, $background_color $end_gradient);
+  background: -webkit-gradient(linear, left top, right top, color-stop($start_gradient,$background_color), color-stop($start_light,$light_gradient), color-stop($end_gradient,$background_color));
+  background: -webkit-linear-gradient(left, $background_color $start_gradient,$light_gradient $start_light,$background_color $end_gradient);
+  background: -o-linear-gradient(left, $background_color $start_gradient,$light_gradient $start_light,$background_color $end_gradient);
+  background: -ms-linear-gradient(left, $background_color $start_gradient,$light_gradient $start_light,$background_color $end_gradient);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$background_color', endColorstr='$background_color',GradientType=1 );
+  background: linear-gradient(left, $background_color $start_gradient,$light_gradient $start_light,$background_color $end_gradient);
+}
