@@ -15,3 +15,53 @@ body
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#828282', endColorstr='#828282',GradientType=1 );
   background: linear-gradient(left, $background_color $start_gradient,$light_gradient $start_light,$background_color $end_gradient);
 }
+
+#container
+{
+  margin: auto;
+  width: 1180px;
+  overflow: hidden;
+}
+
+#slides 
+{
+	width: 999999px;
+ 
+  > div 
+    {
+    height: 600px;
+    width: 1180px;
+    float: left;
+    margin-right: 200px;
+    text-align: center;
+
+    /* Flexible Box Model */
+    display: -webkit-box;
+    -webkit-box-align: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-pack: center;
+
+    display: box;
+    box-align: center;
+    box-orient: horizontal;
+    box-pack: center;
+
+    h2 
+    {
+      font-size: 180px;
+      line-height: 1em;
+      margin: 0;
+    }
+  }
+
+   h1,h2,h3,h4,h5 
+   {
+    color: #292929;
+    font-family: 'League Gothic', sans-serif;
+    letter-spacing: -5px;
+    margin-top: 0;
+    text-shadow: 5px 3px 0 white;
+  }
+}
+
+
