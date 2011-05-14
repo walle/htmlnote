@@ -1,10 +1,9 @@
 class SlideShow
   constructor: ->
-    container = $('#container')
-    container.css('overflow', 'hidden')
-    container.css('margin-top', ($(window).height() - container.height()) / 2)
-    @slides = $("#slides")
-    slides = @slides.children('div')
+    @container = $('#container')
+    @container.css('overflow', 'hidden')
+    @container.css('margin-top', ($(window).height() - @container.height()) / 2)
+    slides = $('#slides').children('div')
     @numberOfSlides = slides.length
     @slideWidth = slides.width() + parseInt(slides.css('margin-right'), 10)
     @firstPosition = 1
@@ -32,19 +31,19 @@ class SlideShow
     @move(false)
 
   move: (right = true) ->
-    if @slides.is(':animated')
+    if @container.is(':animated')
       return
 
     if right then @currentSlide++ else @currentSlide--
-    
-    @updateHash()
+
     @animate()
+    @updateHash()
 
   updateHash: ->
     location.hash = '#slide-' + @currentSlide
 
   animate: ->
-    @slides.animate({scrollLeft: (@currentSlide-1) * @slideWidth})
+    @container.animate({scrollLeft: (@currentSlide-1) * @slideWidth})
 
 $(window).load( ->
   slideShow = new SlideShow()
