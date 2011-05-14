@@ -1,7 +1,7 @@
 $background_color: #828282;
 $light_gradient: #dddddd;
 $start_gradient: 0%;
-$start_light: 48%;
+$start_light: 50%;
 $end_gradient: 100%;
 
 body
@@ -12,6 +12,6 @@ body
   background: -webkit-linear-gradient(left, $background_color $start_gradient,$light_gradient $start_light,$background_color $end_gradient);
   background: -o-linear-gradient(left, $background_color $start_gradient,$light_gradient $start_light,$background_color $end_gradient);
   background: -ms-linear-gradient(left, $background_color $start_gradient,$light_gradient $start_light,$background_color $end_gradient);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$background_color', endColorstr='$background_color',GradientType=1 );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#828282', endColorstr='#828282',GradientType=1 );
   background: linear-gradient(left, $background_color $start_gradient,$light_gradient $start_light,$background_color $end_gradient);
 }
