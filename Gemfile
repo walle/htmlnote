@@ -14,16 +14,21 @@ gem 'uglifier'
 
 gem 'jquery-rails'
 
-# Use unicorn as the web server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'
+group :development do
+  gem 'unicorn'
+  gem 'ruby-debug19', :require => 'ruby-debug'
+end
 
 group :test do
-  # Pretty printed test output
+  gem 'rspec'
+  gem 'rspec-rails'
+  gem 'guard'
+  gem 'guard-rspec'
+  
+  if RUBY_PLATFORM =~ /linux/i
+    gem 'rb-inotify'
+    gem 'libnotify'
+  end
+
   gem 'turn', :require => false
 end
