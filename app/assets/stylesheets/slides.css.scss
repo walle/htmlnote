@@ -4,6 +4,11 @@ $start_gradient: 0%;
 $start_light: 50%;
 $end_gradient: 100%;
 
+$hlen: 2px;
+$vlen: 2px;
+$blur: 5px;
+$color: #000;
+
 body
 {
   background: $background_color;
@@ -45,7 +50,6 @@ $slideHeight: 600px;
     h2 
     {
       font-size: 180px;
-      line-height: 1em;
       margin: 0;
     }
   }
@@ -56,14 +60,50 @@ $slideHeight: 600px;
     font-family: 'League Gothic', sans-serif;
     letter-spacing: -5px;
     margin-top: 0;
-    text-shadow: 5px 3px 0 white;
+    line-height: 1em;
+    text-shadow: 5px 5px 5px #cacaca;
+  }
+
+  h3
+  {
+    font-size: 60px;
+  }
+
+  h4
+  {
+    font-size: 40px;
+    letter-spacing: 0;
+  }
+
+  h5
+  {
+    font-size: 28px;
+    letter-spacing: 0;
+  }
+
+  .text-slide
+  {
+    margin-top: 100px;
+  }
+
+  .code-block
+  {
+    float: right;
+    background: #ececec;
+    font-size: 18px;
+    padding: 12px;
+    margin-right: 40px;
+    width: 600px;
+    text-align: left;
+    font-family: tahoma, sans-serif;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: $hlen $vlen $blur lighten($color, 40%);
+    -moz-box-shadow: $hlen $vlen $blur lighten($color, 40%);
+    box-shadow: $hlen $vlen $blur lighten($color, 40%);
+    -moz-border-radius: 2px;
   }
 }
-
-$hlen: 2px;
-$vlen: 2px;
-$blur: 5px;
-$color: #000;
 
 #progress-bar
 {
