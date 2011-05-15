@@ -50,6 +50,7 @@ class SlideShow
   updateProgress: ->
     @progress = @currentSlide + '/' + @numberOfSlides
     @progressText.text(@progress)
+    @progressText.width(Math.floor(@currentSlide/@numberOfSlides * @progressBar.width()))
 
   animate: ->
     @container.animate({scrollLeft: (@currentSlide-1) * @slideWidth})

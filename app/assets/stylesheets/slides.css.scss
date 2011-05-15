@@ -61,7 +61,13 @@ $slideWidth:  1180px;
 #progress-bar
 {
   width: $slideWidth;
-  margin: 0 auto;
+  margin: 10px auto;
+  background: #fff;
+}
+
+#progress
+{
+  background: #005509;
 }
 
 
