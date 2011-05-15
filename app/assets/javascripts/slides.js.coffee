@@ -27,7 +27,7 @@ class SlideShow
     @container.after(@progressBar)
     @progressBar.click((e) ->
       x = e.pageX - this.offsetLeft
-      currentSlide = Math.floor(x / (self.slideWidth/self.numberOfSlides)) + 1
+      currentSlide = Math.round(x / (self.progressBar.width()/self.numberOfSlides))
       self.updatePosition(currentSlide)
     )
 
