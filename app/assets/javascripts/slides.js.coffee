@@ -8,6 +8,7 @@ class SlideShow
     @slideWidth = slides.width() + parseInt(slides.css('margin-right'), 10)
     @firstPosition = 1
     @currentSlide = @loadFromHash()
+    @hoveredSlide = @currentSlide
     self = this
     $(document).keydown((e) ->
       if e.keyCode == 39 || e.keyCode == 37
@@ -21,15 +22,28 @@ class SlideShow
       self.currentSlide = self.loadFromHash()
       self.updatePosition(self.currentSlide)
     )
+    @tooltip = $('<div id="tooltip"></div>').hide()
     @progressText = $('<p id="progress"></p>')
     @progressBar = $('<div id="progress-bar"></div>').append(@progressText)
     @updatePosition(@currentSlide)
-    @container.after(@progressBar)
-    @progressBar.click((e) ->
+    @container.after(@tooltip).after(@progressBar)
+    @progressBar.mousemove((e) ->
       x = e.pageX - this.offsetLeft
-      currentSlide = Math.round(x / (self.progressBar.width()/self.numberOfSlides))
-      self.updatePosition(currentSlide)
+      self.hoveredSlide = Math.round(x / (self.progressBar.width()/self.numberOfSlides))
+      self.tooltip.text('Slide ' + self.hoveredSlide)
+        .css('bottom', parseInt($(this).css('top')) - 10)
+        .css('left', x)
     )
+    @progressBar.click((e) ->
+      self.updatePosition(self.hoveredSlide)
+    )
+    @progressBar.mouseenter((e) ->
+      self.tooltip.show()
+    )
+    @progressBar.mouseleave((e) ->
+      self.tooltip.hide()
+    )
+
 
   next: ->
     if @currentSlide == @numberOfSlides

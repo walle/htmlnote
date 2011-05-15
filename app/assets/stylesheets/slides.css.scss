@@ -81,4 +81,11 @@ $color: #000;
   background: #005509;
 }
 
-
+#tooltip
+{
+  position: absolute;
+  background: #fffecb; 
+  padding: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+}
