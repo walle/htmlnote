@@ -6,7 +6,7 @@ class Slide
 
   def self.find(slideshow)
     unless Dir.exists? "data/#{slideshow}"
-      raise ArgumentError
+      raise ActionController::RoutingError.new('Not Found')
     end
 
     files = Dir.glob("data/#{slideshow}/*.html")

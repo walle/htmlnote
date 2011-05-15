@@ -1,5 +1,7 @@
 class SlidesController < ApplicationController
   def index
-    @slides = Slide.find('gimli')
+    slideshow = params[:slideshow]
+    slideshow ||= 'sample'
+    @slides = Slide.find(slideshow)
   end
 end
