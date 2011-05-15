@@ -2,6 +2,12 @@ h1. htmlnote
 
 Simple slideshow app build in rails 3.1 to test out the new features.
 
+h2. Demo
+
+To view a demo go to "http://slides.wallgren.me/":http://slides.wallgren.me/ or go to slide "http://slides.wallgren.me/#slide-34":http://slides.wallgren.me/#slide-34
+
+If you want me to host you slides, fork the repository and make a pull request. You slides will then be hosted on http://slides.wallgren.me/yourslides
+
 h2. Usage
 
 To create a new slideshow create a directory in @data/@ and name it after your slideshow. Create html documents numbered from 1 to infinity eg. 1.html, 2.html ...
