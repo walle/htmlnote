@@ -17,6 +17,10 @@ class SlideShow
         else
           self.previous()
     )
+    @progressText = $('<p id="progress"></p>')
+    @progressBar = $('<div id="progress-bar"></div>').append(@progressText)
+    @updateProgress()
+    @container.after(@progressBar)
 
   next: ->
     if @currentSlide == @numberOfSlides
@@ -38,9 +42,14 @@ class SlideShow
 
     @animate()
     @updateHash()
+    @updateProgress()
 
   updateHash: ->
     location.hash = '#slide-' + @currentSlide
+
+  updateProgress: ->
+    @progress = @currentSlide + '/' + @numberOfSlides
+    @progressText.text(@progress)
 
   animate: ->
     @container.animate({scrollLeft: (@currentSlide-1) * @slideWidth})
