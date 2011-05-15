@@ -10,9 +10,11 @@ class Slide
     end
 
     files = Dir.glob("data/#{slideshow}/*.html")
-    files.map do |file|
+    files = files.map do |file|
       Slide.new file
     end
+
+    files.sort { |a,b| a.id.to_i <=> b.id.to_i }
   end
 
   def contents
