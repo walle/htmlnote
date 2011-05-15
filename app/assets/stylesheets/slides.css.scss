@@ -17,11 +17,13 @@ body
 }
 
 $slideWidth:  1180px;
+$slideHeight: 600px;
 
 #container
 {
   margin: auto;
   width: $slideWidth;
+  height: $slideHeight;
   overflow: auto;
 }
 
@@ -31,7 +33,7 @@ $slideWidth:  1180px;
  
   > div 
   {
-    height: 600px;
+    height: $slideHeight;
     width: $slideWidth;
     float: left;
     margin-right: 200px;
