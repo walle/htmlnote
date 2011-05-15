@@ -58,11 +58,22 @@ $slideWidth:  1180px;
   }
 }
 
+$hlen: 2px;
+$vlen: 2px;
+$blur: 5px;
+$color: #000;
+
 #progress-bar
 {
   width: $slideWidth;
   margin: 10px auto;
   background: #fff;
+  -webkit-box-shadow: $hlen $vlen $blur $color;
+  -moz-box-shadow: $hlen $vlen $blur $color;
+  box-shadow: $hlen $vlen $blur $color;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+
 }
 
 #progress
